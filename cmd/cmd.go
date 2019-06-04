@@ -15,6 +15,7 @@ var Format string
 
 type VideoLink struct {
 	Title string
+	YoutubeUrl string
 	Href  string
 }
 
@@ -54,7 +55,8 @@ var rootCmd = &cobra.Command{
 			if titleExist && hrefExist && strings.HasPrefix(href, "/watch?") {
 				 _ = template.Execute(os.Stdout, VideoLink{
 					title,
-					"https://www.youtube.com" + href,
+					"https://www.youtube.com",
+					href,
 				})
 				fmt.Println()
 			}
@@ -67,7 +69,7 @@ func Execute() {
 		&Format,
 		"format",
 		"f",
-		"{{ .Title }} - {{ .Href }}",
+		"{{ .Title }} - {{ .YoutubeUrl }}{{ .Href }}",
 		"Go template to format output.")
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
