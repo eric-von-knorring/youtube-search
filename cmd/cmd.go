@@ -15,14 +15,14 @@ var Format string
 
 type VideoLink struct {
 	Title string
-	YoutubeUrl string
+	BaseUrl string
 	Href  string
 }
 
 var rootCmd = &cobra.Command{
 	Use:   "youtube-search <search query>",
-	Short: "Searches youtube for given text and outputs it to standard out",
-	Long:  `Searches youtube for given text and outputs it to standard out`,
+	Short: "Search youtube for given text",
+	Long:  `Search youtube for given text and outputs the title and link on standard out`,
 	Args:  cobra.MinimumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		argWords := make([]string, 0)
@@ -69,7 +69,7 @@ func Execute() {
 		&Format,
 		"format",
 		"f",
-		"{{ .Title }} - {{ .YoutubeUrl }}{{ .Href }}",
+		"{{ .Title }} - {{ .BaseUrl }}{{ .Href }}",
 		"Go template to format output.")
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println(err)
