@@ -6,7 +6,7 @@ A command line client to search for youtube videos and output the tile and link 
 
 This can be used to get youtube search result and use them in scripts. 
 
-As an example the following script lets you select one of the search results and open the video link with mpv.
+As an example the following script lets you select one of the search with [fuzzy find](https://github.com/junegunn/fzf) results and open the video link with [mpv](https://mpv.io/).
 
 ```bash
 #!/bin/sh
