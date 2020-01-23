@@ -15,6 +15,13 @@ youtube-search $* | fzf | awk ' {print $NF}' | xargs mpv
 ```
 
 ## Installation
+Requires: 
+ - Go version 1.13 or later.
+ - Make
 
+Clone the git repository then enter the git project with your faviorite terminal and run:
+```
+sudo make install
+```
 
 ## Examples
