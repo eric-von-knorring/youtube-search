@@ -1,0 +1,33 @@
+.TH YOUTUBE\-SEARCH 1 youtube-search VERSION
+.SH NAME
+Youtube search client \- A client to search for videos on youtube
+.SH SYNOPSIS
+.B youtube-search
+.RB [
+.IR OPTIONS
+]
+.RB [
+.IR TEXT
+SEARCH
+]
+.SH DESCRIPTION
+.P
+youtube-search is a command line client to search for videos on youtube and output the title and youtube link on standard out.
+.SH OPTIONS
+.TP
+.B \-h, \-\-help
+Prints help text for youtube-search.
+.TP
+.B \-f, \-\-format
+Go template to format output. (default "{{ .Title }} - {{ .Href }}")
+
+.SH USAGE
+The youtube search client can be used to pipe result in to other programs. The following example searches youtube for the text "example" gets lets you select one result with the program dmenu and then opens the selected link in the web-browser surf.
+.TR
+.sp 2
+.br
+.ti +4
+youtube-search example | dmenu -l 10 | awk '{ print $NF }' | xargs surf
+.br
+.sp
+This can of couse be mixed and matched with any other utillity e.g. fzf, mpv, youtube-dl etc.
