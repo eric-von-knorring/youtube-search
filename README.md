@@ -1,6 +1,6 @@
 # Youtube search
 
-A command line tool to search for youtube videos and output the tile and link on standard out.
+A command line client to search for youtube videos and output the tile and link on standard out.
 
 ## Usage
 
