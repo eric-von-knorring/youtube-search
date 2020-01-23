@@ -24,4 +24,3 @@ Clone the git repository then enter the git project with your faviorite terminal
 sudo make install
 ```
 
-## Examples
