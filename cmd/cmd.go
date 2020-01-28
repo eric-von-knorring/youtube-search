@@ -34,6 +34,7 @@ var rootCmd = &cobra.Command{
 
 		response, err := http.Get("https://www.youtube.com/results?search_query=" + searchQuery)
 		if err != nil {
+			log.Print("Request could not reach youtube ", err)
 			os.Exit(127)
 		}
 		defer response.Body.Close()
