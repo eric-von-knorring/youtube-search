@@ -45,7 +45,7 @@ var rootCmd = &cobra.Command{
 
 		template, err := template.New("output").Parse(Format)
 		if err != nil {
-			log.Fatal("Could not parse format flag from as go template")
+			log.Fatal("Could not parse --format flag as proper a go template")
 		}
 
 		document.Find("a").Each(func(_ int, element *goquery.Selection) {
