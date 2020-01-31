@@ -73,7 +73,7 @@ func Execute() {
 		"{{ .Title }} - {{ .BaseUrl }}{{ .Href }}",
 		"Go template to format output.")
 	if err := rootCmd.Execute(); err != nil {
-		fmt.Println(err)
+		// Cobra prints error message
 		os.Exit(1)
 	}
 }
