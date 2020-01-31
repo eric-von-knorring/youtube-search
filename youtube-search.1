@@ -21,6 +21,17 @@ Prints help text for youtube-search.
 .B \-f, \-\-format
 Go template to format output. (default "{{ .Title }} - {{ .Href }}")
 
+.SH EXIT STATUS
+The following are all the status codes that the program will terminate with.
+.TP
+.B 0.
+Program executed normally without any errors.
+.TP
+.B 1.
+General execution error.
+.TP
+.B 127.
+Could not reach youtube.
 .SH USAGE
 The youtube search client can be used to pipe result in to other programs. The following example searches youtube for the text "example" gets lets you select one result with the program dmenu and then opens the selected link in the web-browser surf.
 .TR
