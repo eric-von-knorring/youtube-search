@@ -73,7 +73,6 @@ func Execute() {
 		"{{ .Title }} - {{ .BaseUrl }}{{ .Href }}",
 		"Go template to format output.")
 	if err := rootCmd.Execute(); err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+		log.Fatal("Failed to execute: ", err)
 	}
 }
